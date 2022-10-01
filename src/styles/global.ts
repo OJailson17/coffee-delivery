@@ -10,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
 body: {
   color: ${props => props.theme.colors['base-text']};
   font-size: 1rem;
+  background-color: ${props => props.theme.colors.background};
 }
 
 body, input, button, text-area {
