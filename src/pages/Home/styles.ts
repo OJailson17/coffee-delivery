@@ -2,14 +2,13 @@ import styled from 'styled-components';
 
 export const MainHomeContainer = styled.main`
 	width: 100%;
-	max-width: 1290px;
+	max-width: 70rem;
 
 	margin: 0 auto;
 	margin-top: 6.75rem;
 	margin-bottom: 3rem;
 
 	h2 {
-		margin-left: 1.8rem;
 		width: max-content;
 		font-family: ${props => props.theme.fonts.header};
 		font-weight: 800;

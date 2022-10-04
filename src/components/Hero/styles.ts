@@ -2,10 +2,9 @@ import styled from 'styled-components';
 
 export const HeroContainer = styled.div`
 	width: 100%;
-	max-width: 1290px;
+	max-width: 70rem;
 
 	margin: 5.875rem auto 0;
-	padding: 0 2rem;
 
 	display: flex;
 	align-items: center;
