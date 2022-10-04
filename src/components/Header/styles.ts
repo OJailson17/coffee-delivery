@@ -39,7 +39,6 @@ export const LocationButton = styled.div`
 `;
 
 interface CartButtonProps {
-	isVisible?: boolean;
 	ordersNumber?: string;
 }
 
@@ -57,7 +56,7 @@ export const CartButton = styled.button<CartButtonProps>`
 
 	& .badge {
 		position: relative;
-		display: ${props => !props.isVisible && 'none'};
+		display: ${props => !props.ordersNumber && 'none'};
 
 		&::after {
 			content: '${props => props.ordersNumber}';
