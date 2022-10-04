@@ -10,8 +10,6 @@ export const CheckoutContainer = styled.main`
 
 	display: flex;
 	align-items: flex-start;
-	background-color: ${props => props.theme.colors.background};
-	color: ${props => props.theme.colors['base-text']};
 
 	& .section-title {
 		color: ${props => props.theme.colors['base-subtitle']};

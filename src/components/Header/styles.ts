@@ -53,6 +53,15 @@ export const CartButton = styled.button<CartButtonProps>`
 	background-color: ${props => props.theme.colors['yellow-light']};
 	border: none;
 	border-radius: 6px;
+	position: relative;
+
+	a {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
 	& .badge {
 		position: relative;
@@ -61,7 +70,7 @@ export const CartButton = styled.button<CartButtonProps>`
 		&::after {
 			content: '${props => props.ordersNumber}';
 			position: absolute;
-			right: -30px;
+			right: -40px;
 			top: -30px;
 			min-width: 20px;
 			min-height: 20px;
