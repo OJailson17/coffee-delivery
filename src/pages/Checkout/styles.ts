@@ -30,8 +30,6 @@ export const CheckoutAddress = styled.div`
 	gap: 2rem;
 
 	background-color: ${props => props.theme.colors['base-card']};
-	background-color: red;
-
 	border-radius: 6px;
 
 	& .checkout-title {
@@ -95,8 +93,7 @@ export const CheckoutPaymentMethodContainer = styled.div`
 	width: 40rem;
 	padding: 2.5rem;
 	margin-top: 0.75rem;
-	/* background-color: ${props => props.theme.colors['base-card']}; */
-	background-color: red;
+	background-color: ${props => props.theme.colors['base-card']};
 	border-radius: 6px;
 
 	& .payment-method-title {
