@@ -21,7 +21,7 @@ export const Header = () => {
 						<MapPin size={22} weight='fill' color='#8047F8' />
 						Porto Alegre, RS
 					</LocationButton>
-					<CartButton ordersNumber={''}>
+					<CartButton ordersNumber={''} tabIndex={-1}>
 						<div className='badge'></div>
 						<Link to={'/checkout'}>
 							<ShoppingCart size={22} weight='fill' color='#C47F17' />
