@@ -1,11 +1,11 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
+import { CoffeeCardQuantity } from '../../styles/commonStyles';
 
 import {
 	CoffeeCardAction,
 	CoffeeCardContainer,
 	CoffeeCardInfo,
 	CoffeeCartButton,
-	CoffeeQuantity,
 } from './styles';
 
 interface CoffeeCard {
@@ -43,7 +43,7 @@ export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
 
 					<div>
 						{/* Quantity */}
-						<CoffeeQuantity>
+						<CoffeeCardQuantity>
 							<button>
 								<Plus size={14} color='#8047F8' weight='bold' />
 							</button>
@@ -51,7 +51,7 @@ export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
 							<button>
 								<Minus size={14} color='#8047F8' weight='bold' />
 							</button>
-						</CoffeeQuantity>
+						</CoffeeCardQuantity>
 						{/* Cart */}
 						<CoffeeCartButton>
 							<ShoppingCart size={22} weight='fill' color='#F3F2F2' />
