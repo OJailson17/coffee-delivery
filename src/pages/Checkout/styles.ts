@@ -56,6 +56,29 @@ export const CheckoutFormAddress = styled.form`
 		justify-content: center;
 		gap: 0.75rem;
 	}
+
+	.complement {
+		flex: 1;
+		height: 100%;
+		position: relative;
+
+		display: flex;
+		align-items: center;
+
+		input {
+			width: 100%;
+			padding-right: 4rem;
+		}
+
+		&::after {
+			content: 'optional';
+			position: absolute;
+			color: ${props => props.theme.colors['base-label']};
+			font-size: 0.75rem;
+			right: 0.75rem;
+			font-style: italic;
+		}
+	}
 `;
 
 interface CheckoutInputComponentProps {
@@ -84,6 +107,10 @@ export const CheckoutInputComponent = styled.input<CheckoutInputComponentProps>`
 
 	&:nth-child(2) {
 		flex: 1;
+	}
+
+	&:focus {
+		outline-color: ${props => props.theme.colors['yellow-dark']};
 	}
 `;
 
@@ -126,6 +153,66 @@ export const CheckoutPaymentMethodContainer = styled.div`
 			gap: 0.75rem;
 			text-transform: uppercase;
 			font-size: 0.75rem;
+			cursor: pointer;
+
+			&:hover {
+				transition: background-color 0.2s;
+				background-color: ${props => props.theme.colors['base-hover']};
+			}
+		}
+	}
+`;
+
+export const SelectedItemsContainer = styled.div`
+	width: 28rem;
+	padding: 2.5rem;
+
+	display: flex;
+	flex-direction: column;
+
+	background-color: red;
+	background-color: ${props => props.theme.colors['base-card']};
+	border-radius: 6px 44px 6px 44px;
+`;
+
+export const CheckoutPriceList = styled.div`
+	width: 100%;
+
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		& + div {
+			margin-top: 0.75rem;
+		}
+	}
+
+	& .total-price {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: ${props => props.theme.colors['base-subtitle']};
+	}
+
+	button {
+		width: 100%;
+		height: 2.875rem;
+		margin-top: 1.5rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		background-color: ${props => props.theme.colors.yellow};
+		color: ${props => props.theme.colors.white};
+		font-weight: 700;
+		text-transform: uppercase;
+		border: none;
+		border-radius: 6px;
+
+		&:hover {
+			transition: background-color 0.2s;
+			background-color: ${props => props.theme.colors['yellow-dark']};
 		}
 	}
 `;

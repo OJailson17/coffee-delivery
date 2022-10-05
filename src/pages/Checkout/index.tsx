@@ -5,12 +5,15 @@ import {
 	MapPinLine,
 	Money,
 } from 'phosphor-react';
+import { CheckoutItem } from '../../components/CheckoutItem';
 import {
 	CheckoutAddress,
 	CheckoutContainer,
 	CheckoutFormAddress,
 	CheckoutInputComponent,
 	CheckoutPaymentMethodContainer,
+	CheckoutPriceList,
+	SelectedItemsContainer,
 } from './styles';
 
 export const Checkout = () => {
@@ -42,7 +45,10 @@ export const Checkout = () => {
 								placeholder='NÚMERO'
 								variant='sm'
 							/>
-							<CheckoutInputComponent type='text' placeholder='COMPLEMENTO' />
+
+							<div className='complement'>
+								<CheckoutInputComponent type='text' placeholder='COMPLEMENTO' />
+							</div>
 						</div>
 
 						<div>
@@ -92,6 +98,30 @@ export const Checkout = () => {
 			{/* Cart */}
 			<div>
 				<p className='section-title'>Cafés selecionados</p>
+				<SelectedItemsContainer>
+					<div>
+						{/* Cart item */}
+						<CheckoutItem />
+						<CheckoutItem />
+					</div>
+
+					<CheckoutPriceList>
+						<div>
+							<p>Total de itens</p>
+							<span>R$ 29,70</span>
+						</div>
+						<div>
+							<p>Entrega</p>
+							<span>R$ 3,50</span>
+						</div>
+						<div className='total-price'>
+							<p>Total</p>
+							<span>R$ 33,20</span>
+						</div>
+
+						<button>Confirmar Pedido</button>
+					</CheckoutPriceList>
+				</SelectedItemsContainer>
 			</div>
 		</CheckoutContainer>
 	);
