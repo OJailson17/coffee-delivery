@@ -6,6 +6,7 @@ import {
 	Money,
 } from 'phosphor-react';
 import { CheckoutItem } from '../../components/CheckoutItem';
+import { useCart } from '../../contexts/cartContext';
 import {
 	CheckoutAddress,
 	CheckoutContainer,
@@ -17,11 +18,12 @@ import {
 } from './styles';
 
 export const Checkout = () => {
+	const { cart } = useCart();
+
 	return (
 		<CheckoutContainer>
 			<div>
 				<p className='section-title'>Complete seu pedido</p>
-				{/* Form */}
 				<CheckoutAddress>
 					<div className='checkout-title'>
 						<MapPinLine size={22} color='#C47F17' />
@@ -101,8 +103,9 @@ export const Checkout = () => {
 				<SelectedItemsContainer>
 					<div>
 						{/* Cart item */}
-						<CheckoutItem />
-						<CheckoutItem />
+						{cart.map(cartItem => (
+							<CheckoutItem key={cartItem.id} cartItem={cartItem} />
+						))}
 					</div>
 
 					<CheckoutPriceList>

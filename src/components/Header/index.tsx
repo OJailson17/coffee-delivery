@@ -1,6 +1,7 @@
 import { MapPin, ShoppingCart } from 'phosphor-react';
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/coffee-delivery-logo.svg';
+import { useCart } from '../../contexts/cartContext';
 import {
 	CartButton,
 	HeaderContainer,
@@ -9,6 +10,10 @@ import {
 } from './styles';
 
 export const Header = () => {
+	const { cart } = useCart();
+
+	const numberOfCartItems = cart.length <= 0 ? '' : cart.length;
+
 	return (
 		<HeaderContainer>
 			<HeaderContent>
@@ -21,7 +26,7 @@ export const Header = () => {
 						<MapPin size={22} weight='fill' color='#8047F8' />
 						Porto Alegre, RS
 					</LocationButton>
-					<CartButton ordersNumber={''} tabIndex={-1}>
+					<CartButton ordersNumber={`${numberOfCartItems}`} tabIndex={-1}>
 						<div className='badge'></div>
 						<Link to={'/checkout'}>
 							<ShoppingCart size={22} weight='fill' color='#C47F17' />

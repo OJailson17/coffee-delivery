@@ -1,27 +1,43 @@
 import { Minus, Plus, Trash } from 'phosphor-react';
 
-import coffeeImg from '../../assets/coffee-1.png';
+import { useCart } from '../../contexts/cartContext';
 import { CheckoutItemQuantity } from '../../styles/commonStyles';
 import { CheckoutItemContainer, CheckoutItemInfo, Divider } from './styles';
 
-export const CheckoutItem = () => {
+interface CartItem {
+	id: number;
+	title: string;
+	price: number;
+	quantity: number;
+	imageUrl: string;
+}
+
+interface CheckoutItemProps {
+	cartItem: CartItem;
+}
+
+export const CheckoutItem = ({ cartItem }: CheckoutItemProps) => {
+	const { addCoffeeToCart } = useCart();
+
+	const handleAddCoffeeToCart = () => {
+		addCoffeeToCart(cartItem);
+	};
+
 	return (
 		<>
 			<CheckoutItemContainer>
-				{/* image and details */}
 				<CheckoutItemInfo>
-					<img src={coffeeImg} alt='' />
+					<img src={cartItem.imageUrl} alt='' />
 
 					<div>
-						<p>Expresso Tradicional</p>
+						<p>{cartItem.title}</p>
 
 						<div className='item-action'>
-							{/* Coffee quantity component */}
 							<CheckoutItemQuantity>
-								<button>
+								<button onClick={handleAddCoffeeToCart}>
 									<Plus size={14} color='#8047F8' weight='bold' />
 								</button>
-								<span>1</span>
+								<span>{cartItem.quantity}</span>
 								<button>
 									<Minus size={14} color='#8047F8' weight='bold' />
 								</button>
@@ -35,8 +51,7 @@ export const CheckoutItem = () => {
 					</div>
 				</CheckoutItemInfo>
 
-				{/* Item price */}
-				<span className='item-price'>R$ 9,90</span>
+				<span className='item-price'>R$ {cartItem.price}</span>
 			</CheckoutItemContainer>
 			<Divider />
 		</>
