@@ -1,4 +1,6 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
+import { useEffect, useState } from 'react';
+import { useCart } from '../../contexts/cartContext';
 import { CoffeeCardQuantity } from '../../styles/commonStyles';
 
 import {
@@ -9,9 +11,12 @@ import {
 } from './styles';
 
 interface CoffeeCard {
+	id: number;
 	title: string;
 	description: string;
 	imageUrl: string;
+	tags: string[];
+	price: number;
 }
 
 interface CoffeeCardProps {
@@ -19,6 +24,34 @@ interface CoffeeCardProps {
 }
 
 export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
+	const { addCoffeeToCart, cart } = useCart();
+	const [coffeeQuantity, setCoffeeQuantity] = useState(0);
+
+	const getItemQuantity = (): number => {
+		const item = cart.find(coffeeItem => coffeeItem.id === coffee.id);
+		setCoffeeQuantity(item?.quantity || 0);
+		return item?.quantity || 0;
+	};
+
+	// Add selected coffee to cart
+	const handleAddCoffeeToCart = () => {
+		const { id, title, imageUrl, price } = coffee;
+
+		const coffeeData = {
+			id,
+			title,
+			imageUrl,
+			price,
+			quantity: coffeeQuantity,
+		};
+
+		addCoffeeToCart(coffeeData);
+	};
+
+	useEffect(() => {
+		getItemQuantity();
+	}, [cart]);
+
 	return (
 		<CoffeeCardContainer>
 			<img src={coffee.imageUrl} alt='' />
@@ -37,23 +70,23 @@ export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
 					{/* Price */}
 					<div className='coffee-price'>
 						<span>
-							R$ <strong>9,90</strong>
+							R$ <strong>{coffee.price}</strong>
 						</span>
 					</div>
 
 					<div>
 						{/* Quantity */}
 						<CoffeeCardQuantity>
-							<button>
+							<button onClick={handleAddCoffeeToCart}>
 								<Plus size={14} color='#8047F8' weight='bold' />
 							</button>
-							<span>1</span>
+							<span>{coffeeQuantity}</span>
 							<button>
 								<Minus size={14} color='#8047F8' weight='bold' />
 							</button>
 						</CoffeeCardQuantity>
 						{/* Cart */}
-						<CoffeeCartButton>
+						<CoffeeCartButton onClick={handleAddCoffeeToCart}>
 							<ShoppingCart size={22} weight='fill' color='#F3F2F2' />
 						</CoffeeCartButton>
 					</div>
