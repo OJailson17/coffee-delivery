@@ -24,7 +24,7 @@ interface CoffeeCardProps {
 }
 
 export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
-	const { addCoffeeToCart, cart } = useCart();
+	const { addCoffeeToCart, cart, removeCoffeeFromCart } = useCart();
 	const [coffeeQuantity, setCoffeeQuantity] = useState(0);
 
 	const getItemQuantity = (): number => {
@@ -46,6 +46,10 @@ export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
 		};
 
 		addCoffeeToCart(coffeeData);
+	};
+
+	const handleRemoveCoffeeFromCart = () => {
+		removeCoffeeFromCart({ coffeeId: coffee.id });
 	};
 
 	useEffect(() => {
@@ -81,7 +85,7 @@ export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
 								<Plus size={14} color='#8047F8' weight='bold' />
 							</button>
 							<span>{coffeeQuantity}</span>
-							<button>
+							<button onClick={handleRemoveCoffeeFromCart}>
 								<Minus size={14} color='#8047F8' weight='bold' />
 							</button>
 						</CoffeeCardQuantity>
