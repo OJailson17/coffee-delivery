@@ -5,7 +5,7 @@ import {
 	MapPinLine,
 	Money,
 } from 'phosphor-react';
-import { CheckoutItem } from '../../components/CheckoutItem';
+import { CartItem, CheckoutItem } from '../../components/CheckoutItem';
 import { useCart } from '../../contexts/cartContext';
 import {
 	CheckoutAddress,
@@ -19,6 +19,26 @@ import {
 
 export const Checkout = () => {
 	const { cart } = useCart();
+
+	const formatPrice = (price: number) => {
+		return new Intl.NumberFormat('pt-BR', {
+			style: 'currency',
+			currency: 'BRL',
+		}).format(price);
+	};
+
+	// Delivery tax
+	const deliveryTax = 3.5;
+
+	// Sub total of the bill
+	const subTotal = cart.reduce((sumTotal: number, product: CartItem) => {
+		const subTotal = product.quantity * product.price;
+		sumTotal = sumTotal + subTotal;
+		return sumTotal;
+	}, 0) as number;
+
+	// The total value of the bill
+	const totalBill = subTotal + deliveryTax;
 
 	return (
 		<CheckoutContainer>
@@ -111,15 +131,15 @@ export const Checkout = () => {
 					<CheckoutPriceList>
 						<div>
 							<p>Total de itens</p>
-							<span>R$ 29,70</span>
+							<span>{formatPrice(subTotal)}</span>
 						</div>
 						<div>
 							<p>Entrega</p>
-							<span>R$ 3,50</span>
+							<span>{formatPrice(deliveryTax)}</span>
 						</div>
 						<div className='total-price'>
 							<p>Total</p>
-							<span>R$ 33,20</span>
+							<span>{formatPrice(totalBill)}</span>
 						</div>
 
 						<button>Confirmar Pedido</button>
