@@ -28,6 +28,7 @@ interface CartContextProps {
 	addCoffeeToCart: (coffee: ICoffee) => void;
 	addItemQuantity: (coffeeId: number) => void;
 	removeCoffeeFromCart: (props: removeCoffeeFromCartProps) => void;
+	clearCart: () => void;
 }
 
 const CartContext = createContext({} as CartContextProps);
@@ -128,6 +129,10 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
 		setCart(removedWithZeroQuantity);
 	};
 
+	const clearCart = () => {
+		setCart([]);
+	};
+
 	useEffect(() => {
 		// Only save cart in local storage if there is some item
 		if (cart.length > 0) {
@@ -147,6 +152,7 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
 				addCoffeeToCart,
 				addItemQuantity,
 				removeCoffeeFromCart,
+				clearCart,
 			}}
 		>
 			{children}

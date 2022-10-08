@@ -5,6 +5,8 @@ import { Router } from './Router';
 import { GlobalStyles } from './styles/global';
 import { defaultTheme } from './styles/themes/defaultTheme';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 export function App() {
 	return (
 		<BrowserRouter>

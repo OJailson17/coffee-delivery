@@ -144,20 +144,30 @@ export const CheckoutPaymentMethodContainer = styled.div`
 
 		div {
 			height: 3.188rem;
+			flex: 1;
+		}
+
+		button {
+			width: 100%;
+			height: 100%;
 			background-color: ${props => props.theme.colors['base-button']};
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			flex: 1;
 			border-radius: 6px;
 			gap: 0.75rem;
 			text-transform: uppercase;
 			font-size: 0.75rem;
-			cursor: pointer;
+			border: none;
 
 			&:hover {
 				transition: background-color 0.2s;
 				background-color: ${props => props.theme.colors['base-hover']};
+			}
+
+			&[aria-checked='true'] {
+				background-color: ${props => props.theme.colors['purple-light']};
+				border: 1px solid ${props => props.theme.colors.purple};
 			}
 		}
 	}
