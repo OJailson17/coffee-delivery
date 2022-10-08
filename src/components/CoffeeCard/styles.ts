@@ -61,7 +61,6 @@ export const CoffeeCardAction = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	gap: 1.4rem;
-	/* padding: 0 1.5rem; */
 
 	& .coffee-price {
 		font-size: 0.875rem;

@@ -25,8 +25,6 @@ interface IStateReturn {
 export const Success = () => {
 	const { state } = useLocation() as IStateReturn;
 
-	console.log({ state });
-
 	const paymentMethod = {
 		'credit-card': 'Cartão de Crédito',
 		'debit-card': 'Cartão de Débito',
@@ -41,7 +39,6 @@ export const Success = () => {
 				<OrderInfoWrapper>
 					<OrderInfo>
 						<InfoLocation>
-							{/* Icon */}
 							<div>
 								<MapPin size={16} color='#FAFAFA' weight='fill' />
 							</div>
@@ -61,7 +58,6 @@ export const Success = () => {
 						</InfoLocation>
 
 						<InfoTime>
-							{/* Icon */}
 							<div>
 								<Timer size={16} color='#FAFAFA' weight='fill' />
 							</div>
@@ -73,7 +69,6 @@ export const Success = () => {
 						</InfoTime>
 
 						<InfoPaymentMethod>
-							{/* Icon */}
 							<div>
 								<CurrencyDollar size={16} color='#FAFAFA' />
 							</div>
