@@ -1,7 +1,7 @@
 import { Minus, Plus, Trash } from 'phosphor-react';
 
-import { useCart } from '../../contexts/cartContext';
-import { CheckoutItemQuantity } from '../../styles/commonStyles';
+import { useCart } from '../../../../contexts/cartContext';
+import { CheckoutItemQuantity } from '../../../../styles/commonStyles';
 import { CheckoutItemContainer, CheckoutItemInfo, Divider } from './styles';
 
 export interface CartItem {

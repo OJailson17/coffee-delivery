@@ -1,5 +1,5 @@
-import { CoffeeCard } from '../../components/CoffeeCard';
 import { Hero } from '../../components/Hero';
+import { CoffeeCard } from './components/CoffeeCard';
 import { CoffeeGridContainer, MainHomeContainer } from './styles';
 
 import { coffeeData } from '../../utils/coffeeData';

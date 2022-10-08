@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import { CartItem, CheckoutItem } from '../../components/CheckoutItem';
+import { CartItem, CheckoutItem } from './components/CheckoutItem';
 
 import { useCart } from '../../contexts/cartContext';
 import {

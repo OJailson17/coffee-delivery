@@ -1,7 +1,7 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react';
 import { useEffect, useState } from 'react';
-import { useCart } from '../../contexts/cartContext';
-import { CoffeeCardQuantity } from '../../styles/commonStyles';
+import { useCart } from '../../../../contexts/cartContext';
+import { CoffeeCardQuantity } from '../../../../styles/commonStyles';
 
 import {
 	CoffeeCardAction,
