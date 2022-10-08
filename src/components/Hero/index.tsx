@@ -1,6 +1,5 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react';
 
-import coffeeHeroImg from '../../assets/coffee-hero.png';
 import {
 	HeroContainer,
 	HeroContent,
@@ -10,6 +9,7 @@ import {
 	HeroOptionsPackage,
 	ImageHero,
 } from './styles';
+import coffeeHeroImg from '/assets/coffee-hero.png';
 
 export const Hero = () => {
 	return (

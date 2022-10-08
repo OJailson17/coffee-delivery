@@ -7,7 +7,7 @@ interface ICoffeeProps {
 	price: number;
 }
 
-const imagePathUrl = './src/assets';
+const imagePathUrl = '/assets';
 
 export const coffeeData: ICoffeeProps[] = [
 	{
