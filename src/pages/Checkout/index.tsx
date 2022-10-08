@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
-import { CartItem, CheckoutItem } from './components/CheckoutItem';
+import { CheckoutItem } from './components/CheckoutItem';
 
 import { useCart } from '../../contexts/cartContext';
 import {
@@ -85,13 +85,25 @@ export const Checkout = () => {
 	// Delivery tax
 	const deliveryTax = 3.5;
 
-	// Sub total of the bill
 	// *Typescript error on reduce method*
-	const subTotal = cart.reduce((sumTotal: number, product: CartItem) => {
-		const subTotal = product.quantity * product.price;
-		sumTotal = sumTotal + subTotal;
-		return sumTotal;
-	}, 0) as number;
+	// const subTotal = cart.reduce((sumTotal: number, product: CartItem) => {
+	// 	const subTotal = product.quantity * product.price;
+	// 	sumTotal = sumTotal + subTotal;
+	// 	return sumTotal;
+	// }, 0) as number;
+
+	// Sub total of the bill
+	const calcSubTotal = () => {
+		let subTotal = 0;
+
+		for (const item of cart) {
+			subTotal = item.quantity * item.price;
+		}
+
+		return subTotal;
+	};
+
+	const subTotal = calcSubTotal();
 
 	// The total value of the bill
 	const totalBill = subTotal + deliveryTax;
