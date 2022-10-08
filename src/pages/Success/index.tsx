@@ -1,6 +1,6 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react';
-import { useLocation } from 'react-router-dom';
-import motoboyImg from '../../assets/motoboy.svg';
+import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
 	InfoLocation,
 	InfoPaymentMethod,
@@ -10,6 +10,7 @@ import {
 	SuccessContainer,
 	SuccessContent,
 } from './styles';
+import motoboyImg from '/assets/motoboy.svg';
 
 interface IStateReturn {
 	state: {
@@ -23,6 +24,7 @@ interface IStateReturn {
 }
 
 export const Success = () => {
+	const navigate = useNavigate();
 	const { state } = useLocation() as IStateReturn;
 
 	const paymentMethod = {
@@ -30,6 +32,16 @@ export const Success = () => {
 		'debit-card': 'Cartão de Débito',
 		cash: 'Dinheiro',
 	};
+
+	useEffect(() => {
+		console.log(state);
+
+		if (!state) {
+			navigate('/', {
+				replace: true,
+			});
+		}
+	}, []);
 
 	return (
 		<SuccessContainer>
@@ -48,11 +60,11 @@ export const Success = () => {
 									Entrega em{' '}
 									<strong>
 										{' '}
-										Rua {state.street}, {state.houseNumber}
+										Rua {state?.street}, {state?.houseNumber}
 									</strong>
 								</p>
 								<p>
-									{state.neighbor} - {state.city}, {state.uf}
+									{state?.neighbor} - {state?.city}, {state?.uf}
 								</p>
 							</div>
 						</InfoLocation>
@@ -75,7 +87,7 @@ export const Success = () => {
 
 							<div>
 								<p>Pagamento na entrega</p>
-								<strong>{paymentMethod[state.paymentMethod]}</strong>
+								<strong>{paymentMethod[state?.paymentMethod]}</strong>
 							</div>
 						</InfoPaymentMethod>
 					</OrderInfo>
