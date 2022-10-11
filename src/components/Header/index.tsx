@@ -24,7 +24,7 @@ export const Header = () => {
 				<div>
 					<LocationButton>
 						<MapPin size={22} weight='fill' color='#8047F8' />
-						Porto Alegre, RS
+						Utinga, BA
 					</LocationButton>
 					<CartButton ordersNumber={`${numberOfCartItems}`} tabIndex={-1}>
 						<div className='badge'></div>

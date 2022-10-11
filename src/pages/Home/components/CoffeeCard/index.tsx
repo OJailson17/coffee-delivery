@@ -74,7 +74,11 @@ export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
 					{/* Price */}
 					<div className='coffee-price'>
 						<span>
-							R$ <strong>{coffee.price}</strong>
+							<strong>
+								{new Intl.NumberFormat('pt-BR', {
+								style: 'currency',
+								currency: 'BRL'
+							}).format(coffee.price)}</strong>
 						</span>
 					</div>
 
