@@ -35,6 +35,16 @@ export const CoffeeCardContainer = styled.div`
 		justify-content: center;
 	}
 
+	@media ${device.mobileM} and (max-width: 767px) {
+		max-width: 90%;
+		padding: 0 2rem;
+
+		img {
+			width: 7rem;
+			height: 7rem;
+		}
+	}
+
 	@media ${device.tablet} and (max-width: 1023px) {
 		img {
 			width: 6.5rem;
@@ -42,7 +52,7 @@ export const CoffeeCardContainer = styled.div`
 		}
 	}
 
-	@media ${device.laptop} and (max-width: 1439px) {
+	@media ${device.laptop} and (max-width: 1300px) {
 		img {
 			width: 7rem;
 			height: 7rem;
@@ -66,6 +76,12 @@ export const CoffeeCardInfo = styled.div`
 		font-size: 0.875rem;
 		font-weight: 400;
 		color: ${props => props.theme.colors['base-label']};
+	}
+
+	@media ${device.mobileM} and (max-width: 767px) {
+		p {
+			font-size: 1.5rem;
+		}
 	}
 `;
 
@@ -95,6 +111,12 @@ export const CoffeeCardAction = styled.div`
 		justify-content: center;
 		gap: 0.5rem;
 	}
+
+	@media ${device.mobileM} and (max-width: 767px) {
+		& > div:nth-child(2) {
+			width: 60%;
+		}
+	}
 `;
 
 export const CoffeeCartButton = styled.button`
@@ -107,4 +129,9 @@ export const CoffeeCartButton = styled.button`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 3rem;
+		height: 2.5rem;
+	}
 `;

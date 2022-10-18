@@ -11,11 +11,15 @@ export const HeroContainer = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
+	@media ${device.mobileS} {
+		width: 90%;
+	}
+
 	@media ${device.tablet} and (max-width: 1023px) {
 		width: 85%;
 	}
 
-	@media ${device.laptop} and (max-width: 1439px) {
+	@media ${device.laptop} and (max-width: 1300px) {
 		width: 85%;
 	}
 `;
@@ -50,6 +54,24 @@ export const HeroContent = styled.div`
 		row-gap: 1.5rem;
 	}
 
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 100%;
+
+		h1 {
+			width: 100%;
+			font-size: 2rem;
+		}
+
+		p {
+			width: 100%;
+			font-size: 1rem;
+		}
+
+		& > div {
+			grid-template-columns: 1fr;
+		}
+	}
+
 	@media ${device.tablet} and (max-width: 1023px) {
 		width: 100%;
 
@@ -62,7 +84,7 @@ export const HeroContent = styled.div`
 		}
 	}
 
-	@media ${device.laptop} and (max-width: 1439px) {
+	@media ${device.laptop} and (max-width: 1300px) {
 		width: 60%;
 
 		h1 {
@@ -82,11 +104,11 @@ export const ImageHero = styled.div`
 		width: 29.75rem;
 		height: 22.5rem;
 
-		@media ${device.tablet} and (max-width: 1023px) {
+		@media ${device.mobileS} and (max-width: 1023px) {
 			display: none;
 		}
 
-		@media ${device.laptop} and (max-width: 1439px) {
+		@media ${device.laptop} and (max-width: 1300px) {
 			width: 20rem;
 			height: 14rem;
 		}
@@ -114,7 +136,7 @@ export const HeroOptionsBase = styled.div`
 		color: ${props => props.theme.colors['base-text']};
 	}
 
-	@media ${device.laptop} and (max-width: 1439px) {
+	@media ${device.laptop} and (max-width: 1300px) {
 		gap: 0.5rem;
 
 		span {

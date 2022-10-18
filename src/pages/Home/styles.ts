@@ -17,11 +17,19 @@ export const MainHomeContainer = styled.main`
 		color: ${props => props.theme.colors['base-subtitle']};
 	}
 
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 90%;
+
+		h2 {
+			margin: 0 auto;
+		}
+	}
+
 	@media ${device.tablet} {
 		width: 85%;
 	}
 
-	@media ${device.laptop} and (max-width: 1439px) {
+	@media ${device.laptop} and (max-width: 1300px) {
 		width: 85%;
 
 		h2 {
@@ -33,7 +41,7 @@ export const MainHomeContainer = styled.main`
 export const CoffeeGridContainer = styled.div`
 	margin-top: 3.375rem;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(1, 1fr);
 	column-gap: 2rem;
 	row-gap: 2.5rem;
 	place-items: center;
@@ -42,7 +50,11 @@ export const CoffeeGridContainer = styled.div`
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	@media ${device.laptop} and (max-width: 1439px) {
+	@media ${device.laptop} {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@media (min-width: 1300px) {
+		grid-template-columns: repeat(4, 1fr);
 	}
 `;
