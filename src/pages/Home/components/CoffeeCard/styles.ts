@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../../styles/breakpoints';
 
 export const CoffeeCardContainer = styled.div`
 	width: 100%;
@@ -32,6 +33,13 @@ export const CoffeeCardContainer = styled.div`
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+
+	@media ${device.laptop} and (max-width: 1439px) {
+		img {
+			width: 7rem;
+			height: 7rem;
+		}
 	}
 `;
 

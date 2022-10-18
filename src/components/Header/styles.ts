@@ -1,8 +1,15 @@
 import styled from 'styled-components';
 
+import { device, size } from '../../styles/breakpoints';
+
 export const HeaderContainer = styled.header`
 	width: 100%;
 	height: 6.5rem;
+
+	@media ${device.laptop} and (max-width: ${size.laptopL}) {
+		width: 85%;
+		margin: 0 auto;
+	}
 `;
 
 export const HeaderContent = styled.div`

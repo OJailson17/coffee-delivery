@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../styles/breakpoints';
 
 export const HeroContainer = styled.div`
 	width: 100%;
@@ -9,6 +10,10 @@ export const HeroContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@media ${device.laptop} and (max-width: 1439px) {
+		width: 85%;
+	}
 `;
 
 export const HeroContent = styled.div`
@@ -40,12 +45,31 @@ export const HeroContent = styled.div`
 		grid-template-columns: repeat(2, 1fr);
 		row-gap: 1.5rem;
 	}
+
+	@media ${device.laptop} and (max-width: 1439px) {
+		width: 60%;
+
+		h1 {
+			font-size: 2.5rem;
+			width: 31rem;
+		}
+
+		p {
+			font-size: 0.95rem;
+			width: 31rem;
+		}
+	}
 `;
 
 export const ImageHero = styled.div`
 	img {
 		width: 29.75rem;
 		height: 22.5rem;
+
+		@media ${device.laptop} and (max-width: 1439px) {
+			width: 20rem;
+			height: 14rem;
+		}
 	}
 `;
 
@@ -68,6 +92,10 @@ export const HeroOptionsBase = styled.div`
 	span {
 		font-size: 1rem;
 		color: ${props => props.theme.colors['base-text']};
+	}
+
+	@media ${device.laptop} and (max-width: 1439px) {
+		gap: 0.5rem;
 	}
 `;
 
