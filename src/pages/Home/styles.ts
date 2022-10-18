@@ -17,6 +17,10 @@ export const MainHomeContainer = styled.main`
 		color: ${props => props.theme.colors['base-subtitle']};
 	}
 
+	@media ${device.tablet} {
+		width: 85%;
+	}
+
 	@media ${device.laptop} and (max-width: 1439px) {
 		width: 85%;
 
@@ -33,6 +37,10 @@ export const CoffeeGridContainer = styled.div`
 	column-gap: 2rem;
 	row-gap: 2.5rem;
 	place-items: center;
+
+	@media ${device.tablet} and (max-width: 1023px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 
 	@media ${device.laptop} and (max-width: 1439px) {
 		grid-template-columns: repeat(3, 1fr);

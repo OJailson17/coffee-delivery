@@ -11,6 +11,10 @@ export const HeroContainer = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
+	@media ${device.tablet} and (max-width: 1023px) {
+		width: 85%;
+	}
+
 	@media ${device.laptop} and (max-width: 1439px) {
 		width: 85%;
 	}
@@ -46,6 +50,18 @@ export const HeroContent = styled.div`
 		row-gap: 1.5rem;
 	}
 
+	@media ${device.tablet} and (max-width: 1023px) {
+		width: 100%;
+
+		h1 {
+			width: 100%;
+		}
+
+		p {
+			width: 100%;
+		}
+	}
+
 	@media ${device.laptop} and (max-width: 1439px) {
 		width: 60%;
 
@@ -65,6 +81,10 @@ export const ImageHero = styled.div`
 	img {
 		width: 29.75rem;
 		height: 22.5rem;
+
+		@media ${device.tablet} and (max-width: 1023px) {
+			display: none;
+		}
 
 		@media ${device.laptop} and (max-width: 1439px) {
 			width: 20rem;
@@ -96,6 +116,10 @@ export const HeroOptionsBase = styled.div`
 
 	@media ${device.laptop} and (max-width: 1439px) {
 		gap: 0.5rem;
+
+		span {
+			font-size: 0.875rem;
+		}
 	}
 `;
 

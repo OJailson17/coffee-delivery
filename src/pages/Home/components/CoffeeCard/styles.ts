@@ -35,6 +35,13 @@ export const CoffeeCardContainer = styled.div`
 		justify-content: center;
 	}
 
+	@media ${device.tablet} and (max-width: 1023px) {
+		img {
+			width: 6.5rem;
+			height: 6.5rem;
+		}
+	}
+
 	@media ${device.laptop} and (max-width: 1439px) {
 		img {
 			width: 7rem;
