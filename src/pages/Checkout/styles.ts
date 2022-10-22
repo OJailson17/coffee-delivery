@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../styles/breakpoints';
 
 export const CheckoutContainer = styled.main`
 	width: 100%;
@@ -17,10 +18,16 @@ export const CheckoutContainer = styled.main`
 		font-size: 1.125rem;
 		margin-bottom: 0.938rem;
 	}
+
+	@media ${device.laptop} and (max-width: 1300px) {
+		width: 85%;
+		gap: 0;
+	}
 `;
 
 export const CheckoutAddress = styled.div`
-	width: 40rem;
+	width: 100%;
+	max-width: 40rem;
 	padding: 2.5rem;
 
 	display: flex;
@@ -42,6 +49,12 @@ export const CheckoutAddress = styled.div`
 		span {
 			font-size: 0.875rem;
 		}
+	}
+
+	@media ${device.laptop} and (max-width: 1300px) {
+		width: 95%;
+		/* background-color: red; */
+		padding: 1.5rem;
 	}
 `;
 
@@ -171,6 +184,26 @@ export const CheckoutPaymentMethodContainer = styled.div`
 			}
 		}
 	}
+
+	@media ${device.laptop} and (max-width: 1300px) {
+		width: 95%;
+		/* background-color: green; */
+		padding: 1.5rem;
+
+		& .payment-method-title {
+			span {
+				font-size: 0.813rem;
+			}
+		}
+
+		& .methods {
+			button {
+				/* background-color: orange; */
+				font-size: 0.625rem;
+				gap: 0.625rem;
+			}
+		}
+	}
 `;
 
 export const SelectedItemsContainer = styled.div`
@@ -183,6 +216,12 @@ export const SelectedItemsContainer = styled.div`
 	background-color: red;
 	background-color: ${props => props.theme.colors['base-card']};
 	border-radius: 6px 44px 6px 44px;
+
+	@media ${device.laptop} and (max-width: 1300px) {
+		width: 95%;
+		padding: 2rem;
+		/* background-color: red; */
+	}
 `;
 
 export const CheckoutPriceList = styled.div`
