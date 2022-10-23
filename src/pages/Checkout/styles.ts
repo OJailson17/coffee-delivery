@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import { device } from '../../styles/breakpoints';
 
 export const CheckoutContainer = styled.main`
-	width: 100%;
-	max-width: 70rem;
+	width: 70rem;
 	margin: 0 auto;
 	margin-top: 2.5rem;
 	margin-bottom: 3rem;
@@ -19,6 +18,26 @@ export const CheckoutContainer = styled.main`
 		margin-bottom: 0.938rem;
 	}
 
+	& > .first {
+		width: 100%;
+	}
+
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 95%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		.section-title {
+			text-align: center;
+		}
+	}
+
+	@media ${device.tablet} and (max-width: 1023px) {
+		width: 85%;
+		flex-direction: column;
+	}
+
 	@media ${device.laptop} and (max-width: 1300px) {
 		width: 85%;
 		gap: 0;
@@ -26,8 +45,7 @@ export const CheckoutContainer = styled.main`
 `;
 
 export const CheckoutAddress = styled.div`
-	width: 100%;
-	max-width: 40rem;
+	width: 40rem;
 	padding: 2.5rem;
 
 	display: flex;
@@ -51,9 +69,21 @@ export const CheckoutAddress = styled.div`
 		}
 	}
 
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		/* background-color: green; */
+		padding: 0;
+		margin: 0 auto;
+
+		& .checkout-title {
+			margin-top: 1rem;
+		}
+	}
+
 	@media ${device.laptop} and (max-width: 1300px) {
-		width: 95%;
-		/* background-color: red; */
+		width: 90%;
 		padding: 1.5rem;
 	}
 `;
@@ -81,6 +111,7 @@ export const CheckoutFormAddress = styled.form`
 		input {
 			width: 100%;
 			padding-right: 4rem;
+			/* background-color: red; */
 		}
 
 		&::after {
@@ -90,6 +121,19 @@ export const CheckoutFormAddress = styled.form`
 			font-size: 0.75rem;
 			right: 0.75rem;
 			font-style: italic;
+		}
+	}
+
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 90%;
+		margin-bottom: 1.5rem;
+
+		div {
+			flex-direction: column;
+		}
+
+		.complement {
+			width: 100%;
 		}
 	}
 `;
@@ -124,6 +168,10 @@ export const CheckoutInputComponent = styled.input<CheckoutInputComponentProps>`
 
 	&:focus {
 		outline-color: ${props => props.theme.colors['yellow-dark']};
+	}
+
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 100%;
 	}
 `;
 
@@ -185,6 +233,36 @@ export const CheckoutPaymentMethodContainer = styled.div`
 		}
 	}
 
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 100%;
+		padding: 0 1rem;
+		margin: 0 auto;
+		margin-top: 2rem;
+
+		& .payment-method-title {
+			padding-top: 1rem;
+		}
+
+		& .methods {
+			flex-direction: column;
+			width: 100%;
+			margin: 0 auto;
+			padding: 2rem;
+			gap: 1rem;
+			/* background-color: yellow; */
+
+			div {
+				width: 100%;
+			}
+
+			button {
+				width: 100%;
+				height: 3.188rem;
+				font-size: 0.8rem;
+			}
+		}
+	}
+
 	@media ${device.laptop} and (max-width: 1300px) {
 		width: 95%;
 		/* background-color: green; */
@@ -216,6 +294,13 @@ export const SelectedItemsContainer = styled.div`
 	background-color: red;
 	background-color: ${props => props.theme.colors['base-card']};
 	border-radius: 6px 44px 6px 44px;
+
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 100%;
+		margin: 0 auto;
+		/* padding: 1.5rem; */
+		/* background-color: green; */
+	}
 
 	@media ${device.laptop} and (max-width: 1300px) {
 		width: 95%;

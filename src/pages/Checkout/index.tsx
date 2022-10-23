@@ -95,7 +95,6 @@ export const Checkout = () => {
 	// Sub total of the bill
 	const calcSubTotal = () => {
 		let subTotal = 0;
-
 		for (const item of cart) {
 			subTotal = item.quantity * item.price;
 		}
@@ -232,7 +231,7 @@ export const Checkout = () => {
 
 				{/* Cart */}
 				{cart.length >= 1 && (
-					<div>
+					<div className='first'>
 						<p className='section-title'>Cafés selecionados</p>
 						<SelectedItemsContainer>
 							<div>
@@ -245,7 +244,7 @@ export const Checkout = () => {
 							<CheckoutPriceList>
 								<div>
 									<p>Total de itens</p>
-									<span>{formatPrice(subTotal)}</span>
+									<span>{formatPrice(calcSubTotal())}</span>
 								</div>
 								<div>
 									<p>Entrega</p>
@@ -256,6 +255,7 @@ export const Checkout = () => {
 									<span>{formatPrice(totalBill)}</span>
 								</div>
 
+								{/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
 								<button onClick={handleSubmit(handleConfirmOrder)}>
 									Confirmar Pedido
 								</button>

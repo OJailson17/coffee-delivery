@@ -21,5 +21,8 @@
 				"project": ["./tsconfig.json"] // Specify it only for TypeScript files
 			}
 		}
-	]
+	],
+	"rules": {
+		"@typescript-eslint/no-misused-promises": "off"
+	}
 }

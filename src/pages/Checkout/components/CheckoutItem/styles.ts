@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../../styles/breakpoints';
 
 export const CheckoutItemContainer = styled.div`
 	width: 100%;
@@ -8,6 +9,16 @@ export const CheckoutItemContainer = styled.div`
 
 	& .item-price {
 		font-weight: 700;
+	}
+
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 100%;
+		flex-direction: column-reverse;
+
+		& .item-price {
+			align-self: flex-end;
+			margin-bottom: 0.5rem;
+		}
 	}
 `;
 
