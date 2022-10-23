@@ -20,6 +20,34 @@ export const SuccessContainer = styled.main`
 		color: ${props => props.theme.colors['base-subtitle']};
 	}
 
+	@media ${device.mobileM} and (max-width: 767px) {
+		width: 90%;
+		margin: 0 auto;
+		margin-top: 5rem;
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		span {
+			font-size: 1rem;
+		}
+	}
+
+	@media ${device.tablet} and (max-width: 1023px) {
+		width: 90%;
+		margin: 0 auto;
+		margin-top: 5rem;
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		span {
+			font-size: 1rem;
+		}
+	}
+
 	@media ${device.laptop} and (max-width: 1300px) {
 		width: 85%;
 		margin: 0 auto;
@@ -41,6 +69,18 @@ export const SuccessContent = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@media ${device.mobileM} and (max-width: 767px) {
+		img {
+			display: none;
+		}
+	}
+
+	@media ${device.tablet} and (max-width: 1023px) {
+		img {
+			width: 20rem;
+		}
+	}
 
 	@media ${device.laptop} and (max-width: 1300px) {
 		img {
