@@ -34,8 +34,6 @@ export const Success = () => {
 	};
 
 	useEffect(() => {
-		console.log(state);
-
 		if (!state) {
 			navigate('/', {
 				replace: true,

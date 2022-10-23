@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../styles/breakpoints';
 
 export const SuccessContainer = styled.main`
 	width: 100%;
@@ -18,6 +19,20 @@ export const SuccessContainer = styled.main`
 		font-size: 1.25rem;
 		color: ${props => props.theme.colors['base-subtitle']};
 	}
+
+	@media ${device.laptop} and (max-width: 1300px) {
+		width: 85%;
+		margin: 0 auto;
+		margin-top: 5rem;
+
+		h1 {
+			font-size: 1.75rem;
+		}
+
+		span {
+			font-size: 1rem;
+		}
+	}
 `;
 
 export const SuccessContent = styled.div`
@@ -26,6 +41,12 @@ export const SuccessContent = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@media ${device.laptop} and (max-width: 1300px) {
+		img {
+			width: 25rem;
+		}
+	}
 `;
 
 export const OrderInfoWrapper = styled.div`
@@ -35,6 +56,10 @@ export const OrderInfoWrapper = styled.div`
 	background: linear-gradient(to left, #8047f8, #dbac2c);
 	padding: 1px;
 	border-radius: 6px 36px 6px 36px;
+
+	@media ${device.laptop} and (max-width: 1300px) {
+		width: 50%;
+	}
 `;
 
 export const OrderInfo = styled.div`
@@ -46,6 +71,11 @@ export const OrderInfo = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
+
+	/* @media ${device.laptop} and (max-width: 1300px) {
+		width: 100%;
+		background: transparent;
+	} */
 `;
 
 export const InfoBase = styled.div`
