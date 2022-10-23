@@ -96,7 +96,7 @@ export const Checkout = () => {
 	const calcSubTotal = () => {
 		let subTotal = 0;
 		for (const item of cart) {
-			subTotal = item.quantity * item.price;
+			subTotal += item.quantity * item.price;
 		}
 
 		return subTotal;
