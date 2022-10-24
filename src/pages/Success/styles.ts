@@ -20,7 +20,7 @@ export const SuccessContainer = styled.main`
 		color: ${props => props.theme.colors['base-subtitle']};
 	}
 
-	@media ${device.mobileM} and (max-width: 767px) {
+	@media ${device.mobileS} and (max-width: 767px) {
 		width: 90%;
 		margin: 0 auto;
 		margin-top: 5rem;
@@ -70,7 +70,7 @@ export const SuccessContent = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
-	@media ${device.mobileM} and (max-width: 767px) {
+	@media ${device.mobileS} and (max-width: 767px) {
 		img {
 			display: none;
 		}
