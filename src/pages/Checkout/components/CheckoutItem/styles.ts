@@ -11,7 +11,7 @@ export const CheckoutItemContainer = styled.div`
 		font-weight: 700;
 	}
 
-	@media ${device.mobileM} and (max-width: 767px) {
+	@media ${device.mobileS} and (max-width: 767px) {
 		width: 100%;
 		flex-direction: column-reverse;
 
@@ -60,6 +60,17 @@ export const CheckoutItemInfo = styled.div`
 			&:hover {
 				transition: background-color 0.2s;
 				background-color: ${props => props.theme.colors['base-hover']};
+			}
+		}
+	}
+
+	@media ${device.mobileS} and (max-width: 374px) {
+		& .item-action {
+			& .remove-button {
+				width: 3rem;
+				span {
+					display: none;
+				}
 			}
 		}
 	}

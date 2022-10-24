@@ -22,6 +22,16 @@ export const CheckoutContainer = styled.main`
 		width: 100%;
 	}
 
+	@media ${device.mobileS} and (max-width: 374px) {
+		width: 95%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		.section-title {
+			text-align: center;
+		}
+	}
 	@media ${device.mobileM} and (max-width: 767px) {
 		width: 95%;
 		flex-direction: column;
@@ -69,17 +79,19 @@ export const CheckoutAddress = styled.div`
 		}
 	}
 
-	@media ${device.mobileM} and (max-width: 767px) {
+	@media ${device.mobileS} and (max-width: 767px) {
 		width: 100%;
 		align-items: center;
 		justify-content: center;
-		/* background-color: green; */
-		padding: 0;
+		padding: 0.2rem;
 		margin: 0 auto;
 
 		& .checkout-title {
 			margin-top: 1rem;
 		}
+	}
+	@media ${device.mobileM} and (max-width: 767px) {
+		padding: 0;
 	}
 
 	@media ${device.laptop} and (max-width: 1300px) {
@@ -124,7 +136,7 @@ export const CheckoutFormAddress = styled.form`
 		}
 	}
 
-	@media ${device.mobileM} and (max-width: 767px) {
+	@media ${device.mobileS} and (max-width: 767px) {
 		width: 90%;
 		margin-bottom: 1.5rem;
 
@@ -170,7 +182,7 @@ export const CheckoutInputComponent = styled.input<CheckoutInputComponentProps>`
 		outline-color: ${props => props.theme.colors['yellow-dark']};
 	}
 
-	@media ${device.mobileM} and (max-width: 767px) {
+	@media ${device.mobileS} and (max-width: 767px) {
 		width: 100%;
 	}
 `;
@@ -233,7 +245,7 @@ export const CheckoutPaymentMethodContainer = styled.div`
 		}
 	}
 
-	@media ${device.mobileM} and (max-width: 767px) {
+	@media ${device.mobileS} and (max-width: 767px) {
 		width: 100%;
 		padding: 0 1rem;
 		margin: 0 auto;
@@ -285,7 +297,7 @@ export const CheckoutPaymentMethodContainer = styled.div`
 `;
 
 export const SelectedItemsContainer = styled.div`
-	width: 28rem;
+	max-width: 28rem;
 	padding: 2.5rem;
 
 	display: flex;
@@ -294,6 +306,13 @@ export const SelectedItemsContainer = styled.div`
 	background-color: red;
 	background-color: ${props => props.theme.colors['base-card']};
 	border-radius: 6px 44px 6px 44px;
+
+	@media ${device.mobileS} and (max-width: 374px) {
+		width: 100%;
+		margin: 0 auto;
+		/* padding: 1.5rem; */
+		/* background-color: green; */
+	}
 
 	@media ${device.mobileM} and (max-width: 767px) {
 		width: 100%;

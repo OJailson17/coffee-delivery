@@ -67,7 +67,7 @@ export const CheckoutItem = ({ cartItem }: CheckoutItemProps) => {
 								onClick={handleRemoveCoffeeFromCart}
 							>
 								<Trash size={16} color='#8047F8' />
-								Remover
+								<span>Remover</span>
 							</button>
 						</div>
 					</div>
