@@ -17,11 +17,12 @@ export const MainHomeContainer = styled.main`
 		color: ${props => props.theme.colors['base-subtitle']};
 	}
 
-	@media ${device.mobileM} and (max-width: 767px) {
+	@media ${device.mobileS} and (max-width: 767px) {
 		width: 90%;
 
 		h2 {
 			margin: 0 auto;
+			font-size: 1.6rem;
 		}
 	}
 

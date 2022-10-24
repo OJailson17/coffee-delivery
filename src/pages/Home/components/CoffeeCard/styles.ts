@@ -35,6 +35,16 @@ export const CoffeeCardContainer = styled.div`
 		justify-content: center;
 	}
 
+	@media ${device.mobileS} and (max-width: 374px) {
+		max-width: 90%;
+		padding: 0 1rem;
+
+		img {
+			width: 5rem;
+			height: 5rem;
+		}
+	}
+
 	@media ${device.mobileM} and (max-width: 767px) {
 		max-width: 90%;
 		padding: 0 2rem;
@@ -112,6 +122,20 @@ export const CoffeeCardAction = styled.div`
 		gap: 0.5rem;
 	}
 
+	@media ${device.mobileS} and (max-width: 374px) {
+		gap: 1rem;
+
+		& .coffee-price {
+			strong {
+				font-size: 1.4rem;
+			}
+		}
+
+		& > div:nth-child(2) {
+			width: 70%;
+		}
+	}
+
 	@media ${device.mobileM} and (max-width: 767px) {
 		& > div:nth-child(2) {
 			width: 60%;
@@ -129,6 +153,11 @@ export const CoffeeCartButton = styled.button`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	@media ${device.mobileS} and (max-width: 374px) {
+		width: 2.65rem;
+		height: 2.5rem;
+	}
 
 	@media ${device.mobileM} and (max-width: 767px) {
 		width: 3rem;

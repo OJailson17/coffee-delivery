@@ -6,6 +6,11 @@ export const HeaderContainer = styled.header`
 	width: 100%;
 	height: 6.5rem;
 
+	@media ${device.mobileS} and (max-width: 374px) {
+		width: 90%;
+		margin: 0 auto;
+	}
+
 	@media ${device.mobileM} and (max-width: 1300px) {
 		width: 85%;
 		margin: 0 auto;
@@ -43,6 +48,10 @@ export const LocationButton = styled.div`
 	color: ${props => props.theme.colors['purple-dark']};
 	border: none;
 	border-radius: 6px;
+
+	@media ${device.mobileS} and (max-width: 374px) {
+		display: none;
+	}
 
 	@media ${device.mobileM} and (max-width: 767px) {
 		width: 7rem;

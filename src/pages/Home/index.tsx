@@ -1,4 +1,4 @@
-import { Hero } from '../../components/Hero';
+import { Hero } from './components/Hero';
 import { CoffeeCard } from './components/CoffeeCard';
 import { CoffeeGridContainer, MainHomeContainer } from './styles';
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { device } from '../../styles/breakpoints';
+import { device } from '../../../../styles/breakpoints';
 
 export const HeroContainer = styled.div`
 	width: 100%;
@@ -52,6 +52,24 @@ export const HeroContent = styled.div`
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		row-gap: 1.5rem;
+	}
+
+	@media ${device.mobileS} and (max-width: 374px) {
+		width: 100%;
+
+		h1 {
+			width: 100%;
+			font-size: 1.5rem;
+		}
+
+		p {
+			width: 100%;
+			font-size: 0.875rem;
+		}
+
+		& > div {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	@media ${device.mobileM} and (max-width: 767px) {
@@ -136,7 +154,7 @@ export const HeroOptionsBase = styled.div`
 		color: ${props => props.theme.colors['base-text']};
 	}
 
-	@media ${device.laptop} and (max-width: 1300px) {
+	@media ${device.mobileS} and (max-width: 1300px) {
 		gap: 0.5rem;
 
 		span {
